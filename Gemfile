@@ -9,7 +9,7 @@ gem 'puma', '~> 3.11'
 
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
-gem 'haml-rails', '~> 0.9.0'
+gem 'haml-rails', '~> 1.0'
 gem 'bootstrap-generators', '~> 3.3', '>= 3.3.4'
 
 # Use ActiveModel has_secure_password
