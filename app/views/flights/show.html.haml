@@ -1,0 +1,40 @@
+%nav#navbar-flights.navbar.navbar-light.bg-light
+  %a.far.fa-edit{href: edit_flight_path(@flight)}
+  %a.navbar-brand{href: '#'}
+    %i.fas.fa-plane-departure.mr-md-3
+      = @flight.departure_station
+    %span.mr-md-3
+      = '-'
+    %i.fas.fa-plane-arrival.mr-md-3
+      = @flight.arrival_station
+
+  %ul.nav.nav-pills
+    %li.nav-item
+      %a.nav-link{:href => "#infos"} Infos
+    %li.nav-item
+      %a.nav-link{:href => "#fares"} Fares
+
+%div{"data-offset" => "0", "data-spy" => "scroll", "data-target" => "#navbar-flights", class: 'scrollspy'}
+  %h4#infos Infos
+  .container
+    %dl.row
+      %dt.col-6 Departure station:
+      %dd.col-6= @flight.departure_station
+
+      %dt.col-6 Arrival station:
+      %dd.col-6= @flight.arrival_station
+
+      %dt.col-6 Date:
+      %dd.col-6= convert_to_date(@flight.date)
+
+      %dt.col-6 Passenger count:
+      %dd.col-6= @flight.passenger_count
+
+      %dt.col-6 Wizz discount club:
+      %dd.col-6= @flight.wizz_discount_club
+
+  %h4#fares Fares
+  = render template: 'flight_fares/index', locals: { flight_fares: @flight.flight_fares }
+
+%br/
+= link_to 'Back', flights_path, class: 'btn btn-outline-dark'

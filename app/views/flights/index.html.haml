@@ -1,0 +1,26 @@
+%h1.float-left All flights
+%span.float-right= link_to 'New Flight', new_flight_path, class: 'btn btn-primary'
+
+%table.table
+  %thead.thead-dark
+    %tr
+      %th{scope: 'col'} Departure station
+      %th{scope: 'col'} Arrival station
+      %th{scope: 'col'} Date
+      %th{scope: 'col'} Passenger count
+      %th{scope: 'col'} Wizz discount club
+      %th
+      %th
+      %th
+
+  %tbody
+    - @flights.each do |flight|
+      %tr
+        %td= flight.departure_station
+        %td= flight.arrival_station
+        %td= convert_to_date(flight.date)
+        %td= flight.passenger_count
+        %td= flight.wizz_discount_club
+        %td= link_to 'Show', flight
+        %td= link_to 'Edit', edit_flight_path(flight)
+        %td= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' }

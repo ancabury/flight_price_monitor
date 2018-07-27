@@ -1,0 +1,15 @@
+%table.table
+  %thead
+    %tr
+      %th{scope: 'col'} Price
+      %th{scope: 'col'} Currency
+      %th{scope: 'col'} Availability
+      %th{scope: 'col'} Update from
+
+  %tbody
+    - flight_fares.each do |flight_fare|
+      %tr
+        %td= flight_fare.price
+        %td= flight_fare.currency
+        %td= "#{flight_fare.available_count} seats"
+        %td= flight_fare.created_at

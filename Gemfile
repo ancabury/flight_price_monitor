@@ -7,10 +7,13 @@ gem 'rails', '~> 5.2.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
+gem 'turbolinks', '~> 5.1.0'
+gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails', '~> 1.0'
-gem 'bootstrap-generators', '~> 3.3', '>= 3.3.4'
+gem 'bootstrap', '~> 4.1.3'
+gem 'font-awesome-sass', '~> 5.2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

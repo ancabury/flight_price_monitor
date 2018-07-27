@@ -1,0 +1,10 @@
+.jumbotron
+  .card.w-75.mx-auto
+    .card-body
+      %h5.card-title.text-center Edit flight
+      .card-text
+        = render 'form'
+
+%br/
+= link_to 'Show', @flight, class: 'btn btn-outline-primary'
+= link_to 'Back', flights_path, class: 'btn btn-outline-dark'
