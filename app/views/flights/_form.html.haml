@@ -9,10 +9,10 @@
   .form-row.form-group
     .col-md-6
       = f.label :departure_station
-      = f.text_field :departure_station, class: 'form-control', placeholder: 'Departure'
+      = f.select :departure_station, Airport.all.pluck(:name, :iata_code), { prompt: '-- Select departure --' }, class: 'form-control'
     .col-md-6
       = f.label :arrival_station
-      = f.text_field :arrival_station, class: 'form-control', placeholder: 'Arrival'
+      = f.select :arrival_station, Airport.all.pluck(:name, :iata_code), { prompt: '-- Select arrival --' }, class: 'form-control'
 
   .form-row.form-group
     .col-md-10

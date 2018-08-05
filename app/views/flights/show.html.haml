@@ -19,10 +19,10 @@
   .container
     %dl.row
       %dt.col-6 Departure station:
-      %dd.col-6= @flight.departure_station
+      %dd.col-6= full_name(@flight.departure_airport)
 
       %dt.col-6 Arrival station:
-      %dd.col-6= @flight.arrival_station
+      %dd.col-6= full_name(@flight.arrival_airport)
 
       %dt.col-6 Date:
       %dd.col-6= convert_to_date(@flight.date)
