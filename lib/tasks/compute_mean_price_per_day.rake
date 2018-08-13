@@ -1,7 +1,7 @@
 namespace :compute_mean_price do
   desc 'Compute the mean price of a flight for legacy entries. Should be run once.'
   task :legacy => :environment do
-    Flight.map_each do |flight|
+    Flight.find_each do |flight|
       results = flight.flight_fares.group_by { |f| f.created_at.beginning_of_day }
 
       results.values.map do |day_prices|
@@ -25,7 +25,7 @@ namespace :compute_mean_price do
 
   desc 'Compute the mean price of a flight per day'
   task :daily => :environment do
-    Flight.map_each do |flight|
+    Flight.find_each do |flight|
       results = flight.flight_fares.where(created_at: Time.zone.now.beginning_of_day..Time.zone.now.end_of_day)
 
       average_price = results.inject(0) { |sum, el| sum + el.price }.to_f / results.size
