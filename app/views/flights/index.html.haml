@@ -13,6 +13,7 @@
         %th
         %th
         %th
+        %th
 
     %tbody
       - @flights.each do |flight|
@@ -24,4 +25,5 @@
           %td= flight.wizz_discount_club
           %td= link_to 'Show', flight
           %td= link_to 'Edit', edit_flight_path(flight)
+          %td= link_to 'Stop watching', stop_watching_flight_path(flight), method: :put, remote: true
           %td= link_to 'Destroy', flight, method: :delete, data: { confirm: 'Are you sure?' }

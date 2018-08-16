@@ -1,5 +1,5 @@
 class FlightsController < ApplicationController
-  before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  before_action :set_flight, only: [:show, :edit, :update, :destroy, :stop_watching]
 
   # GET /flights
   # GET /flights.json
@@ -59,6 +59,12 @@ class FlightsController < ApplicationController
       format.html { redirect_to flights_url, notice: 'Flight was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  # PUT /flights/1
+  def stop_watching
+    @flight.update_attributes(stop_watching: true)
+    redirect_to flights_path
   end
 
   private
