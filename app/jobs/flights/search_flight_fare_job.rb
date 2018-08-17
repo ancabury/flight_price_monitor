@@ -21,7 +21,7 @@ module Flights
     attr_accessor :flight
 
     def setup_request
-      uri = URI.parse('https://be.wizzair.com/8.2.0/Api/search/search')
+      uri = URI.parse("https://be.wizzair.com/#{ENV['WIZZAIR_API_VERSION']}/Api/search/search")
       @http = Net::HTTP.new(uri.host, uri.port)
       @http.use_ssl = true
       @http.verify_mode = OpenSSL::SSL::VERIFY_NONE

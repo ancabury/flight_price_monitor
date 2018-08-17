@@ -6,6 +6,7 @@ ruby '2.5.1'
 gem 'rails', '~> 5.2.0'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'dotenv', '~> 2.5'
 
 gem 'turbolinks', '~> 5.1.0'
 gem 'jquery-rails'
